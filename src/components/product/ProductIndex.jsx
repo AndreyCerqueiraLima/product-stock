@@ -15,7 +15,7 @@ export default function ProductIndex() {
 
     return (
         <Main {...headerProps}>
-            <div className="d-flex justify-items-end">
+            <div className="d-flex mb-2 justify-items-end">
                 <Link to="/products/new" className="btn btn-primary">Gerar Produto</Link>
             </div>
             <ProductTable baseUrl={baseUrl} /> 

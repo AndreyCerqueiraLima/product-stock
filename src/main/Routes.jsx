@@ -4,7 +4,8 @@ import Home from '../components/home/Home'
 import UserIndex from "../components/user/UserIndex";
 import UserForm from "../components/user/UserForm";
 import ProductIndex from "../components/product/ProductIndex";
-import ProductForm from "../components/product/ProductForm";
+import ProductNew from "../components/product/ProductNew";
+import ProductEdit from "../components/product/ProductEdit";
 
 const routes =  props => (
     <Routes>
@@ -13,7 +14,8 @@ const routes =  props => (
         <Route path="/users/new" element={<UserForm/>} />
         
         <Route exact path="/products" element={<ProductIndex/>} />
-        <Route path="/products/new" element={<ProductForm/>} />
+        <Route path="/products/new" element={<ProductNew/>} />
+        <Route path="/product/:id" element={<ProductEdit/>} />
 
         <Route path="*" element={<Home/>} />
     </Routes>

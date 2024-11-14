@@ -1,40 +1,45 @@
 import React from "react";
-
-import Main from "../template/Main"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
-
-export default function ProductForm() {
-    const [id, setId] = useState(null)
-    const [name, setName] = useState('')
-    const [value, setValue] = useState('')
-    const [quantity, setQuantity] = useState('')
-    const [ean, setEan] = useState('')
+export default function ProductForm({product}) {
     
+    const [id, setId] = useState("")
+    const [name, setName] = useState("")
+    const [value, setValue] = useState("")
+    const [quantity, setQuantity] = useState("")
+    const [ean, setEan] = useState("")
+    
+    const navigate = useNavigate(); // Inicialize o hook de navegação
+
+    useEffect(() => {
+        if(product){
+            setId(product.id)
+            setName(product.name)
+            setValue(product.value)
+            setQuantity(product.quantity)
+            setEan(product.ean)
+        }
+    }, [product])
+
     function getProduct(){
         return {id,name,value,quantity,ean}
     }
 
     const baseUrl = 'http://localhost:3001/products'
 
-    const headerProps = {
-        icon: 'shopping-bag',
-        title: 'Produtos',
-        subtitle: 'Cadastro de produtos'
-    }
-
-
-    function save(){
+    async function save(){
         const product = getProduct();
 
         const httpMethod = product.id ? 'put' : 'post'
-
-        axios[httpMethod](baseUrl,product).then(resp => console.log(resp))
+        const baseUrlMethod = product.id ? `${baseUrl}/${product.id}` : baseUrl
+        await axios[httpMethod](baseUrlMethod,product).then(resp => {console.log(resp)})
+        navigate('/products')
     }
 
     return (
-        <Main {...headerProps}>
+        <React.Fragment>
             <div className="row">
                 <div className="col-12 col-sm-6">
                     <div className="form-group">
@@ -96,6 +101,6 @@ export default function ProductForm() {
                     <button type="submit" className="btn btn-primary" onClick={save}>Salvar</button>
                 </div>
             </div>
-        </Main>
+        </React.Fragment>
     )
 }

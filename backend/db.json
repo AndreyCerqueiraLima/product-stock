@@ -14,17 +14,10 @@
   "products": [
     {
       "id": 1,
-      "name": "coca-cola",
-      "value": 2.5,
-      "quantity": 100,
-      "ean": "123123321"
-    },
-    {
-      "id": 2,
-      "name": "teste",
+      "name": "Coca Cola 2",
       "value": "2",
-      "quantity": "222",
-      "ean": "231312231"
+      "quantity": "123",
+      "ean": "123"
     }
   ]
 }
