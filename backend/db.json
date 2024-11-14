@@ -1,41 +1,6 @@
 {
   "users": [
     {
-      "name": "Andrey Lima",
-      "email": "Testse@sovo.com",
-      "id": 1
-    },
-    {
-      "name": "Andrey Lima",
-      "email": "Testse@sovo.com",
-      "id": 2
-    },
-    {
-      "name": "Andrey Lima",
-      "email": "Testse@sovo.com",
-      "id": 3
-    },
-    {
-      "name": "teste",
-      "email": "teste@gmail.com",
-      "id": 4
-    },
-    {
-      "name": "teste",
-      "email": "teste@gmail.com",
-      "id": 5
-    },
-    {
-      "name": "teste",
-      "email": "teste@gmail.com",
-      "id": 6
-    },
-    {
-      "name": "teste",
-      "email": "teste@gmail.com",
-      "id": 7
-    },
-    {
       "name": "teste",
       "email": "teste@gmail.com",
       "id": 8
@@ -44,6 +9,22 @@
       "name": "teste2",
       "email": "teste2",
       "id": 9
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "coca-cola",
+      "value": 2.5,
+      "quantity": 100,
+      "ean": "123123321"
+    },
+    {
+      "id": 2,
+      "name": "teste",
+      "value": "2",
+      "quantity": "222",
+      "ean": "231312231"
     }
   ]
 }
